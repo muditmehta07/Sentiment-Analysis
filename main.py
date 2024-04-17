@@ -38,4 +38,3 @@ tokenizer.save_pretrained(save_dir)
 model.save_pretrained(save_dir)
 tokenizer = AutoTokenizer.from_pretrained(save_dir)
 model = AutoModelForSequenceClassification.from_pretrained(save_dir)
-#hello
