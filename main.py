@@ -13,7 +13,7 @@ classifier = pipeline("sentiment-analysis", model=model_name)
 
 sample_data = []
 for i in range(1, 3):
-    INPUT = input(f"> Enter sentence {i} :")
+    INPUT = input(f"> Enter sentence {i}: ")
     sample_data.append(INPUT)
 
 tokens = tokenizer.tokenize(sample_data)
@@ -33,7 +33,7 @@ with torch.no_grad():
     labels = [model.config.id2label[label_id] for label_id in labels.tolist()]
     print(labels)
 
-save_dir = "saved"
+save_dir = "model_cache"
 tokenizer.save_pretrained(save_dir)
 model.save_pretrained(save_dir)
 tokenizer = AutoTokenizer.from_pretrained(save_dir)
